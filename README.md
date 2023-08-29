@@ -85,6 +85,8 @@ const customErr = ErrManager.createException(
 
 # Example
 
+You can return your `custom error` anywhere in the application and and it will directly skip to `ErrrHandler middleware` which whill execute callback if its provided and return response message to the user and close the connection.
+
 ```javascript
 import express from 'express';
 import ErrManager from 'express-custom-error-manager';
