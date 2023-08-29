@@ -1,8 +1,8 @@
-#express-custom-error-manager
+# express-custom-error-manager
 
 "express-custom-error-manager" is a minimalistic [express.js](https://github.com/expressjs/express) package for handling and managing custom error responses anywhere in Express application. Simplifying error handling by allowing you to create custom exceptions with specific messages, HTTP status codes, and optional error-response behaviors. With integrated configurable options, you can control how errors are handled, whether to gracefully send error responses or trigger specific actions by using callbacks.
 
-##Installation
+## Installation
 
 ```
 npm install express-custom-error-manager
@@ -10,9 +10,9 @@ npm install express-custom-error-manager
 
 Also make sure that you have express.js to use it.
 
-##Usage
+## Usage
 
-###Import and register the module.
+### Import and register the module.
 
 make sure to import and call ErrManager.register() method on the top of the application,
 before you regiter any routes.
@@ -24,7 +24,7 @@ import ErrManager from 'express-custom-error-manager';
 app.use(ErrManager.register());
 ```
 
-###Register ErrManager middleware.
+### Register ErrManager middleware.
 
 make sure that Errmanager.middleware() will be placed as last middleware of the app.
 
@@ -37,9 +37,10 @@ import ErrManager from 'express-custom-error-manager';
 app.use(ErrManager.middleware());
 ```
 
-##API
+## API
 
-#`ExHandler.createException(message, callback, options)`
+# `ExHandler.createException(message, callback, options)`
+
 create custom exception class.
 
 - `message` (string): The error message for this exception which will be sent to user.
@@ -73,7 +74,7 @@ const customErr = ErrManager.createException(
 );
 ```
 
-#Example
+# Example
 
 ```javascript
 import express from 'express';
@@ -108,6 +109,6 @@ app.listen(3000, () => {
 });
 ```
 
-##License
+## License
 
 This project is licensed under the MIT License.
