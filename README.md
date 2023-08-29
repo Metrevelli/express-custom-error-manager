@@ -39,7 +39,7 @@ app.use(ErrManager.middleware());
 
 ## API
 
-# `ExHandler.createException(message, callback, options)`
+### `ExHandler.createException(message, callback, options)`
 
 create custom exception class.
 
@@ -50,7 +50,7 @@ create custom exception class.
 `httpStatus` sets the status code which will be sent in error message response (by default its 400).
 `killProcess` controls if node process should be exited gracefully after error is thrown(by deafult its false).
 
-#example `createException` usage:
+### example `createException` usage:
 
 ```javascript
 //exceptions/customEx.js/ts
