@@ -1,6 +1,6 @@
 {
   "name": "express-custom-error-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ExpressJS package for handling and managing custom error responses.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
