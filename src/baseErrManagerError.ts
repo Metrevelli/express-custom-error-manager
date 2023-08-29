@@ -1,15 +1,15 @@
-import { Idata, callback, options } from './types/exHandlerTypes';
+import { callback, options } from './types/errManagerTypes';
 
-export default class BaseExHandlerError extends Error {
+export default class BaseErrManagerError extends Error {
   public httpStatusCode: number;
   public killProcess: boolean;
   public cb: callback;
-  public data: Idata;
+  public data: any;
 
   constructor(
     message: string = '',
     callback: callback = (): void => {},
-    data: Idata = {},
+    data: any = {},
     opts?: options
   ) {
     super(message);

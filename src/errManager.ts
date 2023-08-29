@@ -1,14 +1,13 @@
-import BaseExHandlerError from './baseExHandlerError';
+import BaseErrManagerError from './baseErrManagerError';
 import {
-  Idata,
   IerrorMessageResponse,
   callback,
   options
-} from './types/exHandlerTypes';
+} from './types/errManagerTypes';
 import { Request, Response, NextFunction } from 'express';
 
-export default class ExHandler {
-  private static instance: ExHandler;
+export default class ErrManager {
+  private static instance: ErrManager;
 
   private res: Response;
   private next: NextFunction;
@@ -20,10 +19,10 @@ export default class ExHandler {
 
   public static register() {
     return (req: Request, res: Response, next: NextFunction) => {
-      if (!ExHandler.instance) {
-        ExHandler.instance = new ExHandler(req, res, next);
+      if (!ErrManager.instance) {
+        ErrManager.instance = new ErrManager(req, res, next);
       } else {
-        ExHandler.instance.setReqResNext(req, res, next);
+        ErrManager.instance.setReqResNext(req, res, next);
       }
       next();
     };
@@ -31,7 +30,7 @@ export default class ExHandler {
 
   public static middleware() {
     return async function (
-      err: BaseExHandlerError,
+      err: BaseErrManagerError,
       req: Request,
       res: Response,
       next: NextFunction
@@ -56,9 +55,9 @@ export default class ExHandler {
     callback: callback,
     opts?: options
   ) {
-    return (data?: Idata): any => {
-      ExHandler.instance.next(
-        new BaseExHandlerError(message, callback, data, opts)
+    return (data?: any): any => {
+      ErrManager.instance.next(
+        new BaseErrManagerError(message, callback, data, opts)
       );
     };
   }
