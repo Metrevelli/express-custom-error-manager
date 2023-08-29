@@ -1,3 +1,3 @@
-import exHandler from './exHandler';
+import ErrManager from './errManager';
 
-export default exHandler;
+export default ErrManager;
