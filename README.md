@@ -50,7 +50,7 @@ create custom exception class.
 `httpStatus` sets the status code which will be sent in error message response (by default its 400).
 `killProcess` controls if node process should be exited gracefully after error is thrown(by deafult its false).
 
-### example `createException` usage:
+### Example `createException` usage:
 
 ```javascript
 //exceptions/customEx.js/ts
@@ -72,6 +72,15 @@ const customErr = ErrManager.createException(
     killProcess: false // defaults to false
   }
 );
+```
+
+### Error response format
+
+```json
+{
+  "message": "error message",
+  "httpStatus": 200
+}
 ```
 
 # Example
