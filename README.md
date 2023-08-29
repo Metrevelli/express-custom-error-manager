@@ -79,7 +79,7 @@ const customErr = ErrManager.createException(
 ```json
 {
   "message": "error message",
-  "httpStatus": 200
+  "httpStatus": 400
 }
 ```
 
