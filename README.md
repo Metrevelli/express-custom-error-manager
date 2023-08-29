@@ -77,7 +77,7 @@ const customErr = ErrManager.createException(
 
 ```javascript
 import express from 'express';
-import ErrManager from 'express-custom-error-manager
+import ErrManager from 'express-custom-error-manager';
 
 const app = express();
 
@@ -92,7 +92,6 @@ const userNotFounderr = ErrManager.createException(
     httpStatus: 404
   }
 );
-
 
 app.get('/user/:id', (req, res, next) => {
   const userId = req.params.id;
